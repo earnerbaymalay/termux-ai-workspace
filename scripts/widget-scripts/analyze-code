@@ -1,0 +1,2 @@
+#!/data/data/com.termux/files/usr/bin/bash
+termux-clipboard-get | ~/ai/scripts/qwen-chat "Analyze this code for bugs and improvements: $(cat -)" | termux-notification -t "Code Analysis"

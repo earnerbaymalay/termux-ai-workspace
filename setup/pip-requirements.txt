@@ -1,0 +1,32 @@
+# Python Requirements for Termux AI Workspace
+# Core AI Libraries
+torch==2.3.1
+torchvision==0.18.1
+torchaudio==2.3.1
+transformers==4.42.4
+datasets==2.20.0
+accelerate==0.31.0
+langchain==0.2.6
+langchain-community==0.2.6
+
+# API Clients
+openai==1.35.10
+anthropic==0.28.0
+ollama==0.3.0
+
+# Utilities
+python-dotenv==1.0.1
+requests==2.32.3
+numpy==1.26.4
+pandas==2.2.2
+matplotlib==3.9.0
+seaborn==0.13.2
+
+# Development
+jupyter==1.0.0
+notebook==7.2.0
+ipykernel==6.29.5
+
+# File handling
+PyYAML==6.0.1
+json5==0.9.25

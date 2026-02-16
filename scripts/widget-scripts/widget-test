@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Test script to verify widget functionality
+echo "Widget test successful at $(date)"
