@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "Benchmarking Ollama..."
+time ollama run qwen2.5:7b "Explain quantum computing in one sentence"
