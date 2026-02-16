@@ -33,4 +33,4 @@
 5. Run `morning-routine` widget
 
 ## Repository
-https://github.com/YOUR_USERNAME/termux-ai-workspace
+https://github.com/earnerbaymalay/termux-ai-workspace
