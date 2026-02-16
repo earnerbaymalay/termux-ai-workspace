@@ -1,3 +1,6 @@
+# Termux AI Workspace [![GitHub stars](https://img.shields.io/github/stars/earnerbaymalay/termux-ai-workspace.svg)](https://github.com/earnerbaymalay/termux-ai-workspace/stargazers) [![License](https://img.shields.io/github/license/earnerbaymalay/termux-ai-workspace.svg)](https://github.com/earnerbaymalay/termux-ai-workspace/blob/main/LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/earnerbaymalay/termux-ai-workspace.svg)](https://github.com/earnerbaymalay/termux-ai-workspace/commits/main) [![Issues](https://img.shields.io/github/issues/earnerbaymalay/termux-ai-workspace.svg)](https://github.com/earnerbaymalay/termux-ai-workspace/issues)
+
+A comprehensive local-first AI development environment on Android using Termux + Ollama and various AI tools.
 # Termux AI Workspace
 
 A comprehensive local-first AI development environment on Android using Termux + Ollama and various AI tools.
