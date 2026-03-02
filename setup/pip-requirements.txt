@@ -29,4 +29,4 @@ ipykernel==7.2.0
 
 # File handling
 PyYAML==6.0.1
-json5==0.9.25
+json5==0.13.0
