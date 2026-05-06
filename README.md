@@ -15,6 +15,17 @@
 
 ![Aether](docs/media/hero.svg)
 
+## 🏗️ Architecture
+
+```text
+[ User Interface (gum/figlet) ]
+           │
+[ Neural Operating Interface (aether.sh) ]
+     ┌─────┴─────┬─────────────┐
+[ Models ]  [ Toolbox ]  [ AetherVault ]
+ (GGUF)      (Shell)      (Markdown)
+```
+
 ## What is Aether?
 
 **Aether runs 4 AI models entirely on your phone.** It routes tasks between specialized models, executes shell operations, and maintains a persistent knowledge base. Zero bytes leave your device.
@@ -82,6 +93,7 @@ The `install.sh` script automates the setup of your neural interface:
 | **Skills (17 modules)** | Code review, security audit, data analysis, architecture design. |
 | **AetherVault** | Persistent Markdown knowledge base · grows every session. |
 | **Swarm Orchestrator** | Logic plans → Code implements → Agent analyzes. |
+| **Ralph Loop** | Iterative agentic loop for autonomous multi-turn tasks. |
 | **Voice I/O** | Whisper.cpp STT · Piper TTS · hands-free operation. |
 | **Session Manager** | Unique IDs · save transcripts · resume later. |
 

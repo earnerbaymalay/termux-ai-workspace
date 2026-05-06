@@ -148,6 +148,8 @@ while true; do
     CHOICE=$(gum choose --cursor.foreground "$ACCENT" --header "      [ SELECT NEURAL PATHWAY ]" \
 
         " 🤖 AGENT   (Hermes-8B) " \
+        " 👥 SWARM   (Team Swarm) " \
+        " 🔄 RALPH   (Iterative Loop) " \
         " ⚡ TURBO   (Llama-3B) " \
         " 🧠 LOGIC   (DeepSeek) " \
         " 💻 CODE    (Qwen-3B) " \
@@ -157,6 +159,8 @@ while true; do
 
     case "$CHOICE" in
         *"AGENT"*) launch_ai "hermes-3-8b.gguf" "https://huggingface.co/bartowski/Hermes-3-Llama-3.1-8B-GGUF/resolve/main/Hermes-3-Llama-3.1-8B-Q4_K_M.gguf" "Uncensored Agent" "true" ;;
+        *"SWARM"*) bash "$DIR/scripts/swarm_orchestrator.sh" run "$(gum input --placeholder 'Describe complex task for the Swarm...')" ;;
+        *"RALPH"*) bash "$DIR/scripts/ralph_loop.sh" ;;
         *"TURBO"*) launch_ai "llama-3.2-3b.gguf" "https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q4_K_M.gguf" "Fast Assistant" "false" ;;
         *"LOGIC"*) launch_ai "deepseek-r1-1.5b.gguf" "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf" "Deep Thinker" "false" ;;
         *"CODE"*)  launch_ai "qwen-coder-3b.gguf" "https://huggingface.co/bartowski/Qwen2.5-Coder-3B-Instruct-GGUF/resolve/main/Qwen2.5-Coder-3B-Instruct-Q4_K_M.gguf" "Expert Coder" "false" ;;

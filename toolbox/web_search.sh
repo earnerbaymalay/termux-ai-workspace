@@ -13,7 +13,8 @@ if ! command -v lynx &>/dev/null; then
     pkg install lynx -y >/dev/null
 fi
 
-# Use DuckDuckGo's "html" or "lite" version for privacy and terminal compatibility
-SEARCH_URL="https://duckduckgo.com/html/?q=${QUERY// /+}"
+# Sanitize and encode query
+QUERY_ENCODED=$(echo "$QUERY" | sed 's/ /+/g; s/\"/%22/g; s/\&/%26/g')
+SEARCH_URL="https://duckduckgo.com/html/?q=$QUERY_ENCODED"
 
 lynx -dump -nonumbers "$SEARCH_URL" | grep -A 20 "Results" | head -n 50
