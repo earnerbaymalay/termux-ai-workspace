@@ -16,6 +16,10 @@
     {"name": "backup_manager", "description": "Comprehensive backup and restore for Aether and related projects", "script": "backup_manager.ps1", "enabled": true},
     {"name": "system_monitor", "description": "Real-time system monitoring with alerts and metrics history", "script": "system_monitor.ps1", "enabled": true},
     {"name": "lsp_server", "description": "Language Server Protocol for code intelligence (diagnostics, symbols, definitions)", "script": "lsp_server.ps1", "enabled": true},
-    {"name": "token_optimizer", "description": "Token compression and context optimization (60-90% token savings)", "script": "token_optimizer.ps1", "enabled": true}
+    {"name": "token_optimizer", "description": "Token compression and context optimization (60-90% token savings)", "script": "token_optimizer.ps1", "enabled": true},
+    {"name": "read_file", "description": "Read the content of a file", "script": "read_file.ps1", "enabled": true},
+    {"name": "write_file", "description": "Write or create a file with content", "script": "write_file.ps1", "enabled": true},
+    {"name": "shell_exec", "description": "Execute a shell command", "script": "shell_exec.ps1", "enabled": true},
+    {"name": "get_sys_info", "description": "Get detailed system information", "script": "get_sys_info.ps1", "enabled": true}
   ]
 }
