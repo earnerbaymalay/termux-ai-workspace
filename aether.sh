@@ -68,6 +68,23 @@ boot_sequence() {
     sleep 0.5
 }
 
+# --- AUTO-MEMORY ENGINE ---
+extract_memory() {
+    local u_input="$1"
+    local a_output="$2"
+    
+    # Use TURBO model for extraction
+    local prompt="Analyze this interaction. User: \"$u_input\" AI: \"$a_output\". If the user states a permanent personal preference, fact about themselves, or explicit instruction, extract it as a concise, single-sentence fact. If there are no new facts or preferences, output strictly the word NOTHING."
+    
+    # Run in background via llama-cli (non-interactive)
+    $BIN -m "$MODELS/llama-3.2-3b.gguf" -p "$prompt" -n 64 --temp 0.1 2>/dev/null > "$SESSION_DIR/mem_temp.txt"
+    
+    local content=$(cat "$SESSION_DIR/mem_temp.txt" | tr '\n' ' ')
+    if [[ "$content" != *"NOTHING"* && ${#content} -gt 10 ]]; then
+        echo "$content" > "$DIR/knowledge/aethervault/memory_$(date +%s).md"
+    fi
+}
+
 launch_ai() {
     local mod="$1"
     local url="$2"

@@ -1,108 +1,85 @@
-# Aether usage guide
+# 🌌 Aether — Usage Guide
+### Version 26.04.2 (Standard Edition)
 
-Instructions for setup, first launch, and advanced features.
+Welcome to the **Aether Neural Operating Interface**. This guide covers setup, basic operation, and advanced agentic workflows.
 
 ---
 
-## Beginner guide
+## 🚀 Quick Start (Android / Termux)
 
-### Requirements
+### 1. Requirements
+- **Hardware:** Android device (last 5 years), 6GB+ RAM recommended.
+- **Software:** [Termux](https://f-droid.org/en/packages/com.termux/) from F-Droid (Play Store version is NOT supported).
+- **Storage:** 4GB+ free space for models.
 
-- Android phone from the last 5 years
-- Termux from [F-Droid](https://f-droid.org/en/packages/com.termux/)
-- 3-5GB free storage
-- 4GB+ RAM
-
-### Installation
-
+### 2. Installation
 ```bash
 git clone https://github.com/earnerbaymalay/aether.git
 cd aether
-./install.sh
+./install.sh   # Follow the guided setup (~10 mins)
 ```
 
-The installer updates packages, compiles llama.cpp, and creates your workspace. Setup takes 10-15 minutes.
-
-### First launch
-
-Run:
-```
+### 3. Launch
+Launch from anywhere in Termux by typing:
+```bash
 ai
 ```
 
-Select Turbo for your first chat. It is the fastest tier. Aether will download the model if it is missing.
+---
 
-Type anything:
-```
-You: Explain list comprehensions in Python simply.
-```
+## 🧠 Neural Pathways (AI Tiers)
 
-Type `exit` or use Ctrl+C to leave.
+Aether routes your requests through specialized models based on your selection:
+
+| Pathway | Model | Best For |
+| :--- | :--- | :--- |
+| ⚡ **TURBO** | Llama-3.2-3B | Speed, fast summaries, simple chat. |
+| 🤖 **AGENT** | Hermes-3-8B | Complex tool-use, multi-turn tasks, planning. |
+| 💻 **CODE** | Qwen-Coder-3B | Debugging, logic implementation, review. |
+| 🧠 **LOGIC** | DeepSeek-R1 | Architectural design, deep reasoning, "thinking". |
 
 ---
 
-## Intermediate guide
+## 🛠️ The Aether Toolbox (17 Tools)
 
-### AI tiers
+Aether can interact with your device and the web. The **AGENT** pathway uses these automatically:
+- **System:** `get_battery`, `get_date`, `system_monitor`, `disk_usage`.
+- **Files:** `list_files`, `log_analyzer`, `backup_manager`.
+- **Web:** `web_search` (DuckDuckGo), `web_read` (Markdown scraper).
+- **Knowledge:** `obsidian_notes`, `learn` (saves to AetherVault).
 
-| Tier | Model | Best for |
-|------|-------|----------|
-| Turbo | Llama-3.2-3B | Quick questions and summaries |
-| Agent | Hermes-3-8B | Reasoning, code, and tools |
-| Code | Qwen-Coder-3B | Programming and review |
-| Logic | DeepSeek-R1 | Architecture and deep thinking |
-
-### Toolbox
-
-Select TOOLS from the main menu to run benchmarks, audit your knowledge, or open the debug console.
-
-The Agent tier runs tools automatically. Ask it to check battery status or search the web.
-
-Available tools: get_date, get_battery, list_files, gh_status, obsidian_notes, web_search, learn (saves memory).
-
-### Persistent memory (AetherVault)
-
-Knowledge is stored as Markdown in `knowledge/aethervault/`. The AI reads these files during every session.
-
-Tell the Agent to learn something:
-```
-You: Learn this: python_tips | Use list comprehensions for speed.
-```
-
-### Obsidian integration
-
-1. Install Obsidian on Android.
-2. Open a new vault pointing to `~/aether/knowledge/aethervault/`.
-3. Your AI's memory appears as editable notes.
+**To audit your tools:** Select `TOOLS` from the main menu.
 
 ---
 
-## Advanced guide
+## 🗄️ AetherVault (Persistent Memory)
 
-### Agent core
+Your AI learns as you talk. Knowledge is stored as local Markdown files in `~/aether/knowledge/aethervault/`.
 
-The Agent runs on a llama-server on port 8080. When it outputs `<tool>name(args)</tool>`, the Python agent executes the script and feeds the result back.
+### 🧠 Auto-Memory
+Aether now features background extraction. It silently identifies personal facts or preferences and saves them to your vault without interrupting the chat.
 
-To add a custom tool, place a shell script in `toolbox/` and update `toolbox/manifest.json`.
+### ✍️ Manual Training
+Tell the AI to remember something specific:
+> "Learn this: python_tips | Always use type hints in production code."
 
-### Skills
+---
 
-Skills are drop-in modules. Place a `SKILL.md` file in `skills/your-skill-name/` to add new behaviors.
+## 👥 Advanced Workflows
 
-### Swarm orchestrator
+### 🔄 Ralph Loop (Iterative Agent)
+Located in the main menu. Set a goal, and Aether will iteratively work, self-correct, and use tools until the task is complete.
 
-Run:
+### 👥 Swarm Orchestrator
+Execute complex project-level tasks where **LOGIC** plans, **AGENT** implements, and **CODE** verifies the output.
 ```bash
-./scripts/swarm_orchestrator.sh
+./scripts/swarm_orchestrator.sh run "Task description"
 ```
 
-This chains models together: Logic plans, Agent executes, Code reviews.
+---
 
-### Background sentinel
-
-Run:
-```bash
-./scripts/launch_sentinel.sh
-```
-
-Monitors system health and security.
+## 🎨 Personalization
+Select **SETTINGS** in the main menu to:
+- Change the UI accent color.
+- Adjust model temperature and threads.
+- Manage memory slots and session history.

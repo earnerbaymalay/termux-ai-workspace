@@ -1,62 +1,63 @@
-# Aether troubleshooting guide
+# 🌌 Aether — Troubleshooting Guide
+### Version 26.04.2
 
-Common issues and solutions.
-
----
-
-## Common Termux Issues
-
-1. **Storage Access:** Run `termux-setup-storage` before installation to enable file and directory access.
-2. **Package Conflicts:** Run `pkg update && pkg upgrade` before install to ensure all package versions are compatible.
-3. **Build Failures:** If `llama.cpp` build fails with "ninja: command not found" — run `pkg install ninja`.
-4. **Model Compatibility (ARM64):**
-   - **6GB+ RAM:** Q4_K_M quantisation is recommended for optimal balance.
-   - **4GB RAM:** Use Q2_K quantisation.
-   - **8B+ models:** Do not attempt on devices with less than 6GB RAM.
-5. **Command Not Found:** If `ai` command not found after install — run `source ~/.bashrc` or restart Termux.
+Common issues and their solutions for the Aether ecosystem.
 
 ---
 
-## Installation issues
+## 📱 Termux (Android) Issues
 
-### Missing dependencies
-Re-run `./install.sh`.
+### 🔴 Installation Fails
+- **Issue:** Error during `pkg install` or `llama.cpp` build.
+- **Solution:** Ensure you are using Termux from **F-Droid**. Run `pkg update && pkg upgrade -y` before running `./install.sh`.
+- **Solution:** Ensure you have at least 5GB of free internal storage.
 
-### `ai` command not found
-The installer may have failed to update your `.bashrc`. Run:
-```bash
-echo "alias ai='$HOME/aether/aether.sh'" >> ~/.bashrc && source ~/.bashrc
-```
+### 🟡 `ai` Command Not Found
+- **Issue:** Typing `ai` does nothing.
+- **Solution:** Run `source ~/.bashrc`. If it still fails, run:
+  `echo "alias ai='$HOME/aether/aether.sh'" >> ~/.bashrc && source ~/.bashrc`
 
----
-
-## Performance issues
-
-### AI is slow
-Run `./bench.sh`. If results are below 5 tokens per second, try a smaller model or close background apps.
-
-### Out of memory
-Reduce the `THREADS` variable in `aether.sh` to 4 or 2.
+### 🟠 Out of Memory (OOM)
+- **Issue:** Aether crashes during inference or says "Killed".
+- **Solution:** Decrease the thread count in **SETTINGS** (Menu 9). Try 2 or 4 threads.
+- **Solution:** Switch to a smaller model (e.g., TURBO instead of AGENT).
 
 ---
 
-## System issues
+## 💻 Desktop (Windows/WSL) Issues
 
-### Engine failed to start
-Check the logs at `~/.aether/sessions/llama_server.log`.
+### 🔴 Ollama Connection Failed
+- **Issue:** Agent says `Ollama Inference Error`.
+- **Solution:** Ensure Ollama is running. Open a terminal and type `ollama serve`.
+- **Solution:** Verify the model is downloaded: `ollama pull llama3.1:8b`.
 
-### Obsidian can't find the vault
-Ensure the path is exactly `~/aether/knowledge/aethervault/`.
+### 🟡 PowerShell Permission Error
+- **Issue:** Toolbox scripts fail to run.
+- **Solution:** Run PowerShell as Administrator once and execute:
+  `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
 ---
 
-## FAQ
+## 🧠 AetherVault & Memory Issues
 
-**Is Aether truly offline?**
-Yes. After model download, no data leaves your device unless you use web search tools.
+### ⚪ Vault is Empty
+- **Issue:** Auto-Memory isn't extracting facts.
+- **Solution:** Background extraction requires a secondary model run. If your device is slow, this may take a few moments after you finish typing.
+- **Solution:** Check `~/aether/knowledge/aethervault/` for `.md` files.
 
-**Are the models censored?**
-No. These are raw, open-source models.
+### ⚪ Obsidian Integration
+- **Issue:** Notes don't appear in Obsidian.
+- **Solution:** Ensure your Obsidian vault path is pointed directly to `~/aether/knowledge/aethervault/`.
+
+---
+
+## ❓ FAQ
+
+**Is my data private?**
+100%. Aether runs entirely on local hardware. Zero bytes leave your device unless you explicitly use a `web_search` tool.
 
 **How do I update?**
-Run `git pull` then `./install.sh`.
+Run `git pull` in the installation directory, then re-run `./install.sh`.
+
+**Where are the logs?**
+Check `~/.aether/sessions/` for engine and tool logs.
