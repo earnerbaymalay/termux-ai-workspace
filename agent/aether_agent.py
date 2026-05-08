@@ -170,10 +170,25 @@ def generate_completion(prompt, model="llama3.1:8b", stream=True):
     except Exception as e:
         return f"Ollama Inference Error: {str(e)}"
 
+# --- Memory Extraction ---
+def auto_extract_memory(user_input, ai_output, model="llama3.1:8b"):
+    prompt = f"""Analyze this interaction. 
+User: "{user_input}" 
+AI: "{ai_output}". 
+If the user states a permanent personal preference, fact about themselves, or explicit instruction, extract it as a concise, single-sentence fact. 
+If there are no new facts or preferences, output strictly the word NOTHING."""
+    
+    response = generate_completion(prompt, model=model, stream=False)
+    if "NOTHING" not in response.upper() and len(response) > 5:
+        memory_file = CONTEXT7_DIR / f"memory_{int(time.time())}.md"
+        memory_file.parent.mkdir(parents=True, exist_ok=True)
+        memory_file.write_text(f"# Memory Extract ({datetime.now().strftime('%Y-%m-%d')})\n\n{response}")
+        print(f"{C_DIM}[AetherVault: Memory Extracted]{C_RST}")
+
 # --- Main Logic ---
 def chat_loop(model_name="llama3.1:8b"):
     history = []
-    print(f"\n{C_BOLD}{C_AI}\uD83C\uDF0C AETHER-AI OPERATOR {C_RST}{C_DIM}// V 26.04.2 (WINDOWS){C_RST}")
+    print(f"\n{C_BOLD}{C_AI}🌌 AETHER-AI OPERATOR {C_RST}{C_DIM}// V 26.04.2 (WINDOWS){C_RST}")
     print(f"  Engine: Ollama | Model: {model_name}")
     print(f"  Type 'exit' or 'tools' | ^C to save & quit\n")
 
@@ -220,25 +235,6 @@ def chat_loop(model_name="llama3.1:8b"):
             # Auto-Memory Extraction (Background)
             import threading
             threading.Thread(target=auto_extract_memory, args=(user_input, response, model_name)).start()
-
-        except KeyboardInterrupt:
-            break
-        except Exception as e:
-            print(f"\n{C_ERR}[Critical Error: {e}]{C_RST}")
-
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--model", default="llama3.1:8b")
-    args = parser.parse_args()
-    chat_loop(args.model)
-True)
-                follow_up = generate_completion(tool_prompt, model=model_name)
-                print()
-                response += f"\n[Tool Result: {output}]\n{follow_up}"
-
-            history.append({"role": "user", "content": user_input})
-            history.append({"role": "assistant", "content": response})
 
         except KeyboardInterrupt:
             break
