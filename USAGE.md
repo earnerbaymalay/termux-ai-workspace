@@ -42,13 +42,23 @@ Aether routes your requests through specialized models based on your selection:
 
 ## 🛠️ The Aether Toolbox (17 Tools)
 
-Aether can interact with your device and the web. The **AGENT** pathway uses these automatically:
-- **System:** `get_battery`, `get_date`, `system_monitor`, `disk_usage`.
-- **Files:** `list_files`, `log_analyzer`, `backup_manager`.
-- **Web:** `web_search` (DuckDuckGo), `web_read` (Markdown scraper).
-- **Knowledge:** `obsidian_notes`, `learn` (saves to AetherVault).
+Aether isn't just a chatbot; it's an operator. The **AGENT** pathway can autonomously use the following tools to fulfill your requests.
 
-**To audit your tools:** Select `TOOLS` from the main menu.
+### 🤖 Agentic Tool Protocol
+The AI triggers tools using a specific XML-style syntax: `<tool>name(args)</tool>`. While the Agent does this automatically, you can explicitly ask it to use a tool.
+
+### 📚 Core Tool Reference & Examples
+
+| Tool | Purpose | Example Command |
+| :--- | :--- | :--- |
+| **`learn`** | Persists facts to AetherVault. | "Learn this: coffee_pref | I like dark roast with no sugar." |
+| **`web_search`** | Real-time web search (DuckDuckGo). | "Search the web for the latest SpaceX launch status." |
+| **`web_read`** | Scrapes clean text from a URL. | "Read this article: https://example.com/news and summarize it." |
+| **`system_monitor`**| Checks CPU, RAM, and Disk health. | "Check my system resources and tell me if I'm low on RAM." |
+| **`list_files`** | Native directory exploration. | "List the files in my aether/scripts folder." |
+| **`gh_status`** | Checks Git/GitHub repository state. | "Check the git status of this project." |
+| **`obsidian_notes`**| Interfaces with your Obsidian vault. | "Search my Obsidian notes for 'Project Phoenix'." |
+| **`token_optimizer`**| Compresses context for long chats. | "Run the token optimizer on my last session to save space." |
 
 ---
 
