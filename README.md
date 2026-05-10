@@ -68,6 +68,10 @@ Aether Droid uses an **Orchestrator** to route tasks between specialized models:
 
 Ported from Edge Sentinel, Aether Droid now proactively monitors hardware telemetry for security anomalies and thermal risks.
 
+## 🛡️ Active Defense
+
+Ported from Edge Sentinel, Aether Droid now proactively monitors hardware telemetry for security anomalies and thermal risks.
+
 ## 🛠️ Key Features
 
 - **Integrated Toolbox:** Over 17 system-level tools for battery management, file ops, and network analysis.
