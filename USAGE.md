@@ -1,7 +1,7 @@
-# 🌌 Aether — Usage Guide
+# 🌌 Aether Droid — Usage Guide
 ### Version 26.04.2 (Standard Edition)
 
-Welcome to the **Aether Neural Operating Interface**. This guide covers setup, basic operation, and advanced agentic workflows.
+Welcome to the **Aether Droid Neural Operating Interface**. This guide covers setup, basic operation, and advanced agentic workflows.
 
 ---
 
@@ -29,7 +29,7 @@ ai
 
 ## 🧠 Neural Pathways (AI Tiers)
 
-Aether routes your requests through specialized models based on your selection:
+Aether Droid routes your requests through specialized models based on your selection:
 
 | Pathway | Model | Best For |
 | :--- | :--- | :--- |
@@ -40,9 +40,9 @@ Aether routes your requests through specialized models based on your selection:
 
 ---
 
-## 🛠️ The Aether Toolbox (17 Tools)
+## 🛠️ The Aether Droid Toolbox (17 Tools)
 
-Aether isn't just a chatbot; it's an operator. The **AGENT** pathway can autonomously use the following tools to fulfill your requests.
+Aether Droid isn't just a chatbot; it's an operator. The **AGENT** pathway can autonomously use the following tools to fulfill your requests.
 
 ### 🤖 Agentic Tool Protocol
 The AI triggers tools using a specific XML-style syntax: `<tool>name(args)</tool>`. While the Agent does this automatically, you can explicitly ask it to use a tool.
@@ -51,7 +51,7 @@ The AI triggers tools using a specific XML-style syntax: `<tool>name(args)</tool
 
 | Tool | Purpose | Example Command |
 | :--- | :--- | :--- |
-| **`learn`** | Persists facts to AetherVault. | "Learn this: coffee_pref | I like dark roast with no sugar." |
+| **`learn`** | Persists facts to Aether DroidVault. | "Learn this: coffee_pref | I like dark roast with no sugar." |
 | **`web_search`** | Real-time web search (DuckDuckGo). | "Search the web for the latest SpaceX launch status." |
 | **`web_read`** | Scrapes clean text from a URL. | "Read this article: https://example.com/news and summarize it." |
 | **`system_monitor`**| Checks CPU, RAM, and Disk health. | "Check my system resources and tell me if I'm low on RAM." |
@@ -62,12 +62,12 @@ The AI triggers tools using a specific XML-style syntax: `<tool>name(args)</tool
 
 ---
 
-## 🗄️ AetherVault (Persistent Memory)
+## 🗄️ Aether DroidVault (Persistent Memory)
 
 Your AI learns as you talk. Knowledge is stored as local Markdown files in `~/aether/knowledge/aethervault/`.
 
 ### 🧠 Auto-Memory
-Aether now features background extraction. It silently identifies personal facts or preferences and saves them to your vault without interrupting the chat.
+Aether Droid now features background extraction. It silently identifies personal facts or preferences and saves them to your vault without interrupting the chat.
 
 ### ✍️ Manual Training
 Tell the AI to remember something specific:
@@ -78,7 +78,7 @@ Tell the AI to remember something specific:
 ## 👥 Advanced Workflows
 
 ### 🔄 Ralph Loop (Iterative Agent)
-Located in the main menu. Set a goal, and Aether will iteratively work, self-correct, and use tools until the task is complete.
+Located in the main menu. Set a goal, and Aether Droid will iteratively work, self-correct, and use tools until the task is complete.
 
 ### 👥 Swarm Orchestrator
 Execute complex project-level tasks where **LOGIC** plans, **AGENT** implements, and **CODE** verifies the output.

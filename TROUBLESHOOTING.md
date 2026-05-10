@@ -1,7 +1,7 @@
-# 🌌 Aether — Troubleshooting Guide
+# 🌌 Aether Droid — Troubleshooting Guide
 ### Version 26.04.2
 
-Common issues and their solutions for the Aether ecosystem.
+Common issues and their solutions for the Aether Droid ecosystem.
 
 ---
 
@@ -18,7 +18,7 @@ Common issues and their solutions for the Aether ecosystem.
   `echo "alias ai='$HOME/aether/aether.sh'" >> ~/.bashrc && source ~/.bashrc`
 
 ### 🟠 Out of Memory (OOM)
-- **Issue:** Aether crashes during inference or says "Killed".
+- **Issue:** Aether Droid crashes during inference or says "Killed".
 - **Solution:** Decrease the thread count in **SETTINGS** (Menu 9). Try 2 or 4 threads.
 - **Solution:** Switch to a smaller model (e.g., TURBO instead of AGENT).
 
@@ -38,7 +38,7 @@ Common issues and their solutions for the Aether ecosystem.
 
 ---
 
-## 🧠 AetherVault & Memory Issues
+## 🧠 Aether DroidVault & Memory Issues
 
 ### ⚪ Vault is Empty
 - **Issue:** Auto-Memory isn't extracting facts.
@@ -54,7 +54,7 @@ Common issues and their solutions for the Aether ecosystem.
 ## ❓ FAQ
 
 **Is my data private?**
-100%. Aether runs entirely on local hardware. Zero bytes leave your device unless you explicitly use a `web_search` tool.
+100%. Aether Droid runs entirely on local hardware. Zero bytes leave your device unless you explicitly use a `web_search` tool.
 
 **How do I update?**
 Run `git pull` in the installation directory, then re-run `./install.sh`.
