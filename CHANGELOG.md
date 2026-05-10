@@ -9,6 +9,16 @@ Versioning follows **CalVer**: `YY.MM.patch` (year.month.patch).
 
 ## [Unreleased]
 
+## [26.05.1] - 2026-05-09
+### Added
+- **Neural Distillation Engine:** New memory compression logic that consolidates fragmented `.md` memories into structured, topical knowledge bases.
+- **Memory Distiller Script:** `scripts/memory_distiller.py` utilizing the LOGIC tier (DeepSeek-R1) for high-density distillation.
+- **Agentic Distillation:** New `distill` tool for Aether-Agent to autonomously manage long-term memory.
+
+### Changed
+- **AetherVault Upgrade:** Increased memory priority and token budget in `knowledge_loader.py`.
+- **UI Improvements:** Added 'DISTILL' to the TOOLS menu in `aether.sh`.
+
 ---
 
 ## [26.04.2] — 2026-04-08

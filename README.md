@@ -3,11 +3,11 @@
 # 🌌 A E T H E R
 ### *Offline AI Workstation for Android.*
 
-[![Version](https://img.shields.io/badge/version-26.04.2-50fa7b?style=for-the-badge)](VERSIONS.md)
+[![Version](https://img.shields.io/badge/version-26.05.1-50fa7b?style=for-the-badge)](VERSIONS.md)
 [![License](https://img.shields.io/badge/license-MIT-f1fa8c?style=for-the-badge)](LICENSE)
 [![Privacy](https://img.shields.io/badge/privacy-100%25_local-bd93f9?style=for-the-badge)](#privacy)
 
-**[📲 Download](https://github.com/earnerbaymalay/aether/releases)** · **[🌐 Sideload Hub](https://earnerbaymalay.github.io/sideload/)** · **[📖 Usage Guide](USAGE.md)** · **[🔧 Troubleshooting](TROUBLESHOOTING.md)**
+**[📲 Download](https://github.com/earnerbaymalay/aether-android/releases)** · **[🌐 Sideload Hub](https://earnerbaymalay.github.io/sideload/)** · **[📖 Usage Guide](USAGE.md)** · **[🔧 Troubleshooting](TROUBLESHOOTING.md)**
 
 </div>
 
@@ -39,8 +39,8 @@
 **Prerequisites:** Android + [Termux](https://f-droid.org/en/packages/com.termux/) (from F-Droid). 6GB+ RAM recommended.
 
 ```bash
-git clone https://github.com/earnerbaymalay/aether.git
-cd aether
+git clone https://github.com/earnerbaymalay/aether-android.git
+cd aether-android
 ./install.sh   # guided installer (~10 min first time)
 ai             # launch
 ```
@@ -51,9 +51,8 @@ ai             # launch
 
 | Platform | Repo | Version |
 |----------|------|---------|
-| 📱 **Android (Termux)** | [aether](https://github.com/earnerbaymalay/aether) | 26.04.2 |
-| 🖥️ **macOS / Desktop** | [aether-desktop](https://github.com/earnerbaymalay/aether-desktop) | 26.04.2 |
-| 🍎 **Apple (iOS/iPad)** | [aether-apple](https://github.com/earnerbaymalay/aether-apple) | 26.04.2 |
+| 📱 **Android (Termux)** | [aether-android](https://github.com/earnerbaymalay/aether-android) | 26.05.1 |
+| 🖥️ **Desktop (Tauri)** | [aether-tauri](https://github.com/earnerbaymalay/aether-tauri) | 26.05.1 |
 
 </div>
 

@@ -66,6 +66,15 @@ def run_tool(name, args=""):
         except Exception as e:
             return f"Learning Error: {str(e)}"
 
+    if name == "distill":
+        try:
+            print(f"\n{C_DIM}[Running Memory Distillation...]{C_RST}")
+            cmd = ["python3", str(DIR / "scripts" / "memory_distiller.py")]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+            return result.stdout.strip() if result.returncode == 0 else f"Distillation Error: {result.stderr.strip()}"
+        except Exception as e:
+            return f"Distillation Error: {str(e)}"
+
     manifest = load_manifest()
     tool = next((t for t in manifest["tools"] if t["name"] == name), None)
     if not tool: return f"Error: Tool '{name}' not found."
@@ -99,6 +108,7 @@ def build_system_prompt(query=""):
     manifest = load_manifest()
     tool_list = "\n".join([f"- **{t['name']}**: {t['description']}" for t in manifest["tools"]])
     tool_list += "\n- **learn**: Save new insights to AetherVault (format: filename|content)"
+    tool_list += "\n- **distill**: Consolidate fragmented memories into structured knowledge"
 
     skills_dir = DIR / "skills"
     skill_content = ""

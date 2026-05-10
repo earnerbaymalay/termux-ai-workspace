@@ -185,6 +185,7 @@ while true; do
         *"TOOLS"*)
             TOOL=$(gum choose \
                 " 🧹 PURGE (Clear Memory) " \
+                " 🧠 DISTILL (Compress Memories) " \
                 " 📖 LIBRARIAN (Audit Vault) " \
                 " 📏 BENCHMARK (Hardware) " \
                 " 🛒 SKILL MARKET (Extensions) " \
@@ -198,6 +199,7 @@ while true; do
                 " 🔙 BACK ")
             case "$TOOL" in
                 *"PURGE"*) rm -f "$SESSION_DIR/last_session.log" && gum toast "Memory Wiped." ;;
+                *"DISTILL"*) python3 "$DIR/scripts/memory_distiller.py" | gum pager ;;
                 *"LIBRARIAN"*) python3 "$DIR/scripts/librarian.py" | gum pager ;;
                 *"BENCHMARK"*) ./bench.sh ;;
                 *"MARKET"*) ./scripts/skill_market.sh ;;

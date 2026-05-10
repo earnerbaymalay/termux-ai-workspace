@@ -67,11 +67,11 @@ class AetherVault:
             "max_chars": 400,
         },
         "memory": {
-            "label": "Learned Memories",
-            "description": "Knowledge the AI saved from sessions",
-            "priority": "medium",
+            "label": "Distilled Memories",
+            "description": "Consolidated knowledge about user, system, and projects",
+            "priority": "high",
             "dir": "memories",
-            "max_chars": 500,
+            "max_chars": 1500,
         },
     }
 
